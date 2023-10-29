@@ -7,7 +7,7 @@
 
         }
 
-        public Employes(int id, int employeecode, string name, string surname, string fatherName, string fINcode, string emailAdress, int departmentId, Department department)
+        public Employes(int id, string employeecode, string name, string surname, string fatherName, string fINcode, string emailAdress, int departmentId, Department department)
         {
             this.id = id;
             Employeecode = employeecode;
@@ -21,7 +21,7 @@
         }
 
         public int id { get; set; }
-        public int Employeecode { get; set; }
+        public string Employeecode { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FatherName { get; set; }
@@ -30,5 +30,10 @@
         public int? DepartmentId { get; set; }
         public bool IsDeleted { get; set; }
         public Department Department { get; set; }
+
+        internal bool Any(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

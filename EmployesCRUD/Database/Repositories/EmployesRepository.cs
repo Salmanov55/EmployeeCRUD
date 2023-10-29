@@ -63,9 +63,9 @@ namespace EmployesCRUD.Database.Repositories
                     FatherName = Convert.ToString(dataReader["father name"]),
                     FINcode = Convert.ToString(dataReader["FIN"]),
                     EmailAdress = Convert.ToString(dataReader["email"]),
-                    DepartmentId = dataReader["departmentid"] as int ?,
+                    DepartmentId = dataReader["id"] as int ?,
                     Department = dataReader["departmentid"] is int
-                        ? new Department(Convert.ToInt32(dataReader["categoryId"]), Convert.ToString(dataReader["categoryName"]))
+                        ? new Department(Convert.ToInt32(dataReader["departmentId"]), Convert.ToString(dataReader["departmentName"]))
                         : null
                 };
 
@@ -73,6 +73,30 @@ namespace EmployesCRUD.Database.Repositories
             }
 
             return products;
+        }
+
+        public Employes GetById(int id)
+        {
+            using NpgsqlCommand command = new NpgsqlCommand($"SELECT * FROM employees WHERE id={id}", _npgsqlConnection);
+            using NpgsqlDataReader dataReader = command.ExecuteReader();
+
+            Employes employes = null;
+
+            while (dataReader.Read())
+            {
+                employes = new Employes
+                {
+                    id = Convert.ToInt32(dataReader["id"]),
+                    Name = Convert.ToString(dataReader["name"]),
+                    Surname = Convert.ToString(dataReader["surname"]),
+                    FatherName = Convert.ToString(dataReader["fathername"]),
+                    FINcode = Convert.ToString(dataReader["FINcode"]),
+                    EmailAdress = Convert.ToString(dataReader["email"]),
+                    DepartmentId = dataReader["categoryid"] as int?
+                };
+            }
+
+            return employes;
         }
 
         public void Insert(Employes employee)

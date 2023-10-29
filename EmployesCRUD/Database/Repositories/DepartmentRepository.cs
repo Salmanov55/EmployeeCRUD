@@ -26,8 +26,8 @@ namespace EmployesCRUD.Database.Repositories
             {
                 Department employee = new Department
                 {
-                    Id = Convert.ToInt32(dataReader["id"]),
-                    Name = Convert.ToString(dataReader["name"]),
+                    Id = Convert.ToInt32(dataReader["departmentid"]),
+                    Name = Convert.ToString(dataReader["departmentname"]),
                 };
 
                 department.Add(employee);
