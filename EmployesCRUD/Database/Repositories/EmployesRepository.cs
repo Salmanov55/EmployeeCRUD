@@ -89,8 +89,8 @@ namespace EmployesCRUD.Database.Repositories
         {
             var query =
                     $"UPDATE employees " +
-                    $"SET name='{employee.Name}', 'surname={employee.Surname}', 'fathername={employee.FatherName}', 'fincode={employee.FINcode}', 'email={employee.EmailAdress}', departmentid={employee.DepartmentId}" +
-                    $"WHERE id={employee.id}";
+                    $"SET name='{employee.Name}', 'surname={employee.Surname}', 'fathername={employee.FatherName}', 'fincode={employee.FINcode}', 'email={employee.EmailAdress}', departmentid={employee.DepartmentId}" + 
+                    $"WHERE id={employee.id}"; 
 
             using NpgsqlCommand updateCommand = new NpgsqlCommand(query, _npgsqlConnection);
             updateCommand.ExecuteNonQuery();

@@ -1,4 +1,5 @@
-﻿@model ProductAddResponseViewModel
+﻿@using EmployesCRUD.ViewModels;
+@model EmployeeAddResponseViewModel
 @{
     Layout = "_AdminLayout";
 }
@@ -6,37 +7,47 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header">
-            <p class="text-muted mb-0">Add New Product.</p>
+            <p class="text-muted mb-0">Add New Employee.</p>
         </div><!--end card-header-->
         <div class="card-body">
-            <form asp-controller="Product" asp-action="Add" method="POST">
+            <form asp-controller="Employee" asp-action="Add" method="POST">
                 <div class="form-group">
-                    <label asp-for="Name">Product Name:</label>
-                    <input asp-for="Name" type="text" class="form-control" id="productName" placeholder="Enter product name">
+                    <label asp-for="Name">Employee Name:</label>
+                    <input asp-for="Name" type="text" class="form-control" id="employeeName" placeholder="Enter employee name">
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Price">Price:</label>
-                    <input asp-for="Price" type="text" class="form-control" id="productPrice" placeholder="Enter price">
-                    <span asp-validation-for="Price" class="text-danger"></span>
+                    <label asp-for="Surname">Surname:</label>
+                    <input asp-for="Surname" type="text" class="form-control" id="surname" placeholder="Enter surname">
+                    <span asp-validation-for="Surname" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Rating">Rating:</label>
-                    <input asp-for="Rating" type="text" class="form-control" id="productRating" placeholder="Enter rating">
-                    <span asp-validation-for="Rating" class="text-danger"></span>
+                    <label asp-for="FatherName">Father name:</label>
+                    <input asp-for="FatherName" type="text" class="form-control" id="fatherName" placeholder="Enter name">
+                    <span asp-validation-for="FatherName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label for="productCategory">Categories:</label>
-                    <select asp-for="CategoryId" id="productCategory" class="form-control">
-                        @foreach (var category in Model.Categories)
+                    <label asp-for="FIN">FIN code:</label>
+                    <input asp-for="FIN" type="text" class="form-control" id="fincode" placeholder="Enter FIN code">
+                    <span asp-validation-for="FIN" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email adress:</label>
+                    <input asp-for="Email" type="text" class="form-control" id="email" placeholder="Enter email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="employeeDepartment">Department:</label>
+                    <select asp-for="DepartmentId" id="employeeDepartment" class="form-control">
+                        @foreach (var department in Model.DepartmentList)
                         {
-                            <option value="@category.Id">@category.Name</option>
+                            <option value="@department.Id">@department.Name</option>
 
                         }
                     </select>
-                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                    <span asp-validation-for="DepartmentId" class="text-danger"></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Add Product</button>
+                <button type="submit" class="btn btn-primary">Add Employee</button>
             </form>
         </div><!--end card-body-->
     </div><!--end card-->

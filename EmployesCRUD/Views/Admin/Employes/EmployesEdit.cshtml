@@ -1,4 +1,5 @@
-﻿@model ProductUpdateResponseViewModel
+﻿@using EmployesCRUD.ViewModels;
+@model EmployeeUpdateResponseViewModel
 @{
     Layout = "_AdminLayout";
 }
@@ -9,33 +10,41 @@
             <p class="text-muted mb-0">Update Product.</p>
         </div><!--end card-header-->
         <div class="card-body">
-            <form asp-controller="Product" asp-action="Edit" asp-route-id="@Model.Id" method="POST">
+            <form asp-controller="Employee" asp-action="Edit" asp-route-id="@Model.Id" method="POST">
                 <div class="form-group">
-                    <label asp-for="Name">Product Name:</label>
-                    <input asp-for="Name" type="text" class="form-control" id="productName" placeholder="Enter product name">
+                    <label asp-for="Name">Employee Name:</label>
+                    <input asp-for="Name" type="text" class="form-control" id="employeeName" placeholder="Enter employee name">
                 </div>
                 <div class="form-group">
-                    <label asp-for="Price">Price:</label>
-                    <input asp-for="Price" type="text" class="form-control" id="productPrice" placeholder="Enter price">
+                    <label asp-for="Surname">Surname:</label>
+                    <input asp-for="Surname" type="text" class="form-control" id="surname" placeholder="Enter surname">
                 </div>
                 <div class="form-group">
-                    <label asp-for="Rating">Rating:</label>
-                    <input asp-for="Rating" type="text" class="form-control" id="productRating" placeholder="Enter rating">
+                    <label asp-for="FatherName">Father name:</label>
+                    <input asp-for="FatherName" type="text" class="form-control" id="fatherName" placeholder="Enter name">
                 </div>
                 <div class="form-group">
-                    <label for="productCategory">Categories:</label>
-                    <select asp-for="CategoryId" id="productCategory" class="form-control">
+                    <label asp-for="FIN">FIN code:</label>
+                    <input asp-for="FIN" type="text" class="form-control" id="fincode" placeholder="Enter FIN code">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email">Email adress:</label>
+                    <input asp-for="Email" type="text" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="employeeDepartment">Departmnet:</label>
+                    <select asp-for="DepartmentId" id="employeeDepartment" class="form-control">
                         <option value="">-- NOT SELECTED --</option>
 
-                        @foreach (var category in Model.Categories)
+                        @foreach (var department in Model.Departments)
                         {
-                            @if (category.Id == Model.CategoryId)
+                            @if (department.Id == Model.DepartmentId)
                             {
-                                <option value="@category.Id" selected>@category.Name</option>
+                                <option value="@department.Id" selected>@department.Name</option>
                             }
                             else
                             {
-                                <option value="@category.Id">@category.Name</option>
+                                <option value="@department.Id">@department.Name</option>
                             }
                         }
                     </select>
