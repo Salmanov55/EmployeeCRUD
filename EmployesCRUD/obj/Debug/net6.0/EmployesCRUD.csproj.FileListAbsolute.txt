@@ -1,0 +1,9 @@
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.csproj.AssemblyReference.cache
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.AssemblyInfoInputs.cache
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.AssemblyInfo.cs
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.csproj.CoreCompileInputs.cache
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.RazorAssemblyInfo.cache
+C:\Users\Aydan\Desktop\EmployesCRUD\EmployesCRUD\obj\Debug\net6.0\EmployesCRUD.RazorAssemblyInfo.cs
