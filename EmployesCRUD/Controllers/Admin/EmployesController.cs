@@ -27,7 +27,7 @@ public class EmployesController : Controller
     [HttpGet] 
     public IActionResult Products()
     {
-        return View("Views/Admin/Employes/Employes.cshtml", _employeeRepository.GetAllWithCategories());
+        return View("Views/Admin/Employes/Employes.cshtml", _employeeRepository.GetAllWithDepartaments());
     }
 
     [HttpGet("add")]

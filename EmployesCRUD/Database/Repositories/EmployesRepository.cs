@@ -44,14 +44,14 @@ namespace EmployesCRUD.Database.Repositories
             return employes;
         }
 
-        public List<Employes> GetAllWithCategories()
+        public List<Employes> GetAllWithDepartaments()
         {
             var selectQuery = "SELECT \r\n    e.\"id\" AS employeesId,\r\n    e.\"name\" AS employeesName,\r\n    e.\"surname\" AS employeesSurname,\r\n\te.\"father_name\" AS employesFatherName,\r\n    d.\"department_id\" AS departmentId,\r\n    d.\"department_name\" AS departmentName\r\n\tFROM employees e\r\n\tLEFT JOIN department d ON e.\"department_id\" = d.\"department_id\"\r\n\tORDER BY e.\"name\";";
 
             using NpgsqlCommand command = new NpgsqlCommand(selectQuery, _npgsqlConnection);
             using NpgsqlDataReader dataReader = command.ExecuteReader();
 
-            List<Employes> products = new List<Employes>();
+            List<Employes> employee = new List<Employes>();
 
             while (dataReader.Read())
             {
@@ -69,10 +69,10 @@ namespace EmployesCRUD.Database.Repositories
                         : null
                 };
 
-                products.Add(employes);
+                employee.Add(employes);
             }
 
-            return products;
+            return employee;
         }
 
         public Employes GetById(int id)
